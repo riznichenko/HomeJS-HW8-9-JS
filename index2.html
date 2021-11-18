@@ -1,0 +1,209 @@
+<!-- <head>
+    <style>
+      .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+  
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: #3e8e41;
+      }
+  
+      #myInput {
+        box-sizing: border-box;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      #myInput:focus {
+        outline: 3px solid #ddd;
+      }
+  
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+      }
+  
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+  
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+  
+      .show {
+        display: block;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>Drop-down search/filter</h1>
+  
+    <p>Click button to open drop-down search/filter.</p>
+  
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn"> Drop-down</button>
+      <div id="myDropdown" class="dropdown-content">
+        <div>
+          <label for='red'>red</label>
+          <input id='red' type='checkbox' onclick="toggleCheckbox(this)" />
+          <label for='green'>green</label>
+          <input id='green' onclick="toggleCheckbox(this)" type='checkbox' />
+        </div>
+        <div>
+          <label for='blue'>blue</label>
+          <input id='blue' type='checkbox' onclick="toggleCheckbox(this)" />
+          <label for='black'>black</label>
+          <input id='black' type='checkbox' />
+        </div>
+  
+      </div>
+    </div>
+    <ul id='products' style='width: 400px;margin-left: 300px;'>
+  
+      <ul>
+        </div>
+  
+        <script>
+  
+  let arr = [{
+          elem: 'element1 red',
+          color: 'red'
+        }, {
+          elem: 'element2 red',
+          color: 'red'
+        }, {
+          elem: 'element3 red',
+          color: 'red'
+        }, {
+          elem: 'element4 blue',
+          color: 'blue'
+        }, {
+          elem: 'element5 green',
+          color: 'green'
+        }];
+        
+
+        let list = document.getElementById('products');
+        
+
+        arr.forEach (({elem,color}) => {
+        const li = document.createElement('li');
+        li.innerText = elem;
+        li.classList.add(color);
+        list.appendChild(li);
+        }); 
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function toggleCheckbox(element, event) {
+            if(element.id ==="red" && element.checked) {
+                let sortList = document.querySelectorAll('#products li')
+                sortList.forEach(el => {
+                    if(el.className.split(' ').find(el=>el ==='red')) {
+                        el.display = '';
+                    }else {
+                        el.display = "none"
+                        }
+                    }
+                );
+            }
+        }
+          
+        </script>
+  
+  </body>
+
+
+
+
+<!-- 
+
+<form name="loginForm">
+  <input name="login" type="text" />
+  <input name="password" type="password" />
+  
+  <button type="submit">Log In</button>
+</form>
+<p id='message'></p>
+
+
+
+<script>
+  document.forms.loginForm.addEventListener('submit', event=> {
+//     let user = {
+//       name : event.target.login.value,
+//       password: event.target.password.value
+// };
+
+// localStorage.setItem('login' , JSON.stringify(user));
+// event.target.reset();
+event.preventDefault();
+
+const userData = JSON.parse(localStorage.login);
+
+let p = document.getElementById('message');
+if (userData.password === event.target.password.value) {
+ p.innerText = 'Данные ок';
+} else {
+  p.innerText = 'Данные не ок';
+}
+
+});
+</script> -->
+
+
+<input type="text" id="input" placeholder="Введите продукт.">
+<ul id="list">
+    <li>масло</li>
+    <li>сметана</li>
+    <li>творог</li>
+    <li>кефир</li>
+    <li>молоко</li>
+    <li>сыр</li>
+    <li>ряженка</li>
+    <li>брынза</li>
+</ul>
+
+<script>  
+search = window.document.getElementById('input').addEventListener('keyup', ({target}) => {
+   const string = target.value.toLowerCase()
+   let all = window.document.querySelectorAll('#list li')
+   all.forEach( el => {
+       if(el.innerHTML.toLowerCase().indexOf(string)>-1){
+           el.style.display = '';
+       } else {
+           el.style.display = 'none'}
+ })
+ });
+   
+   console.log(search);
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Level</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap" rel="stylesheet">
+    <link href='/css/style.css' rel='stylesheet' type='text/css'>
+    
+  </head>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container _container">
+        <a href="#" class="header__logo">
+          <img src="img/logo.png">
+        </a>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#" class="menu__link"><img src="img/cart.png"><span class="counter"> 1 </span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="banner _container"> <p class="title_banner">MacBook Pro M1</p><button class="but">Add to cart</button></div>
+        
+    <div class="content _container">
+     <div class="search"><div class="icon" style="-webkit-mask-image: url(/img/search.svg);"></div><input id="input" class="input" alt="search" placeholder="Enter device name..."></input>
+     <button class="filter"><img src="/img/Filter.png"></button><button class = "sort"><img src="/img/Sort.png"></button></div>
+     </div>
+     
+     <div class="productItem _container">
+       <div class="filter">
+       <div class="filterBox">
+        <div class="priceFilt" onclick="price()" class="dropbtn">Price   <img src="/img/icons/arrow_left.svg" class="arrowFilt"></div>
+            <div id="filtPrice" class="listForm">
+              <div class="price-cur">
+                <li class = "listPrice" id="priceFilert"> From <input class="priceInp"></li>
+                <li class = "listPrice" id="priceFilert"> To <input class="priceInp"></li>
+              </div></div>
+
+              <div class="priceFilt" onclick="color()" class="dropbtn">Color   <img src="/img/icons/arrow_left.svg" class="arrowFilt"></div>
+              <div id="filtColor" class="listForm">
+                <div>
+                  <div class="input-box">
+          <input id='red' onclick="toggleCheckbox(this)" type='checkbox' />
+          <label for='red'>Red</label></div>
+          <div class="input-box">
+          <input id='black' onclick="toggleCheckbox(this)" type='checkbox' />
+          <label for='black'>Black</label></div>
+          <div class="input-box">
+          <input id='blue' onclick="toggleCheckbox(this)" type='checkbox' />
+          <label for='blue'>Blue</label></div>
+          <div class="input-box">
+          <input id='green' onclick="toggleCheckbox(this)" type='checkbox' />
+          <label for='blue'>Green</label></div>
+                </div></div>
+
+                <div class="priceFilt" onclick="memory()" class="dropbtn">Memory   <img src="/img/icons/arrow_left.svg" class="arrowFilt"></div>
+            <div id="filtMemory" class="listForm">
+                <div class="input-box">
+                <input id='32BG' onclick="toggleCheckbox(this)" type='checkbox' />
+                <label for='32BG'>32 GB</label></div>
+                <div class="input-box">
+                <input id='64BG' onclick="toggleCheckbox(this)" type='checkbox' />
+                <label for='64BG'>64 BG</label></div>
+                <div class="input-box">
+                <input id='128BG' onclick="toggleCheckbox(this)" type='checkbox' />
+                <label for='128BG'>128 BG</label></div>
+                <div class="input-box">
+                <input id='256BG' onclick="toggleCheckbox(this)" type='checkbox' />
+                <label for='256BG'>256 BG</label></div>
+              </div>
+            </div>
+            </div>
+       <div class="product_list">
+        <div class="cards" id="card">
+        </div>
+       </div>
+     </div>
+    </div>
+</div>
+
+</body>
+
+<script src="/js/items.js"></script>
+</html>
